@@ -1,11 +1,269 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>product</title>
+    <title>Products | NovaLend</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Flowbite -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
-  <body>
-    <h1>Product page</h1>
+
+  <body class="text-gray-800">
+    <!-- HERO SECTION -->
+    <section
+      class="relative bg-center bg-cover bg-no-repeat h-[70vh] flex items-center justify-center"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1567427013953-ec9e2b8d58b5');
+      "
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-indigo-900/70 to-red-600/70"
+      ></div>
+      <div class="relative z-10 text-center text-white px-5">
+        <h1
+          class="text-4xl md:text-6xl font-extrabold mb-4"
+          data-aos="fade-up"
+          data-aos-duration="1200"
+        >
+          Our Loan & Investment Products
+        </h1>
+        <p
+          class="text-lg md:text-xl max-w-2xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Explore our trusted financial solutions — fast, flexible, and built
+          for your future.
+        </p>
+        <button
+          data-modal-target="loanModal"
+          data-modal-toggle="loanModal"
+          class="mt-6 bg-white text-indigo-700 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-indigo-100 transition"
+        >
+          Calculate Your Loan
+        </button>
+      </div>
+    </section>
+
+    <!-- FILTER BUTTONS -->
+    <div
+      class="w-4/5 mx-auto mt-12 flex flex-wrap justify-center gap-4"
+      data-aos="fade-up"
+    >
+      <button
+        class="border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white transition px-6 py-2 rounded-full font-medium"
+      >
+        Personal Loans
+      </button>
+      <button
+        class="border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white transition px-6 py-2 rounded-full font-medium"
+      >
+        Business Loans
+      </button>
+      <button
+        class="border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white transition px-6 py-2 rounded-full font-medium"
+      >
+        Investment Plans
+      </button>
+      <button
+        class="border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white transition px-6 py-2 rounded-full font-medium"
+      >
+        Mortgage
+      </button>
+    </div>
+
+    <!-- PRODUCTS GRID -->
+    <section
+      class="w-4/5 mx-auto py-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-10"
+    >
+      <div
+        class="bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-2xl transition p-6"
+        data-aos="fade-right"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1565372918674-98d2b87f6e0b"
+          alt="Personal Loan"
+          class="rounded-xl mb-4 h-48 w-full object-cover"
+        />
+        <h3 class="text-xl font-semibold text-indigo-700 mb-2">
+          Personal Loan
+        </h3>
+        <p class="text-gray-600 mb-3">
+          Instant approval with minimal documentation. Perfect for emergencies
+          and lifestyle needs.
+        </p>
+        <p class="text-sm text-gray-800 mb-4">
+          Rate: <span class="text-indigo-600 font-medium">7.2% APR</span><br />
+          Tenure: <span class="text-indigo-600 font-medium">12–48 months</span>
+        </p>
+        <button class="text-indigo-600 font-semibold hover:underline">
+          Apply Now →
+        </button>
+      </div>
+
+      <div
+        class="bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-2xl transition p-6"
+        data-aos="zoom-in"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+          alt="Business Loan"
+          class="rounded-xl mb-4 h-48 w-full object-cover"
+        />
+        <h3 class="text-xl font-semibold text-indigo-700 mb-2">
+          Business Expansion Loan
+        </h3>
+        <p class="text-gray-600 mb-3">
+          Scale your operations with flexible repayment plans and low interest
+          rates.
+        </p>
+        <p class="text-sm text-gray-800 mb-4">
+          Rate: <span class="text-indigo-600 font-medium">6.5% APR</span><br />
+          Tenure: <span class="text-indigo-600 font-medium">1–5 years</span>
+        </p>
+        <button class="text-indigo-600 font-semibold hover:underline">
+          Apply Now →
+        </button>
+      </div>
+
+      <div
+        class="bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-2xl transition p-6"
+        data-aos="fade-left"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1567427013953-ec9e2b8d58b5"
+          alt="Investment Plan"
+          class="rounded-xl mb-4 h-48 w-full object-cover"
+        />
+        <h3 class="text-xl font-semibold text-indigo-700 mb-2">
+          High-Growth Investment
+        </h3>
+        <p class="text-gray-600 mb-3">
+          Invest smartly and earn steady returns with secure, diversified
+          portfolios.
+        </p>
+        <p class="text-sm text-gray-800 mb-4">
+          ROI: <span class="text-indigo-600 font-medium">Up to 15%</span><br />
+          Duration: <span class="text-indigo-600 font-medium">6–24 months</span>
+        </p>
+        <button class="text-indigo-600 font-semibold hover:underline">
+          Learn More →
+        </button>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE NOVALEND -->
+    <section
+      class="bg-gradient-to-r from-indigo-600 to-red-500 py-16 text-white text-center"
+      data-aos="fade-up"
+    >
+      <div class="w-4/5 mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Why Choose NovaLend?</h2>
+        <p class="max-w-3xl mx-auto text-lg opacity-90">
+          Transparent rates. Instant disbursement. Dedicated advisors. We make
+          borrowing and investing seamless and rewarding.
+        </p>
+      </div>
+    </section>
+
+    <!-- LOAN CALCULATOR MODAL -->
+    <div
+      id="loanModal"
+      tabindex="-1"
+      aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 bg-black/50 backdrop-blur-sm"
+    >
+      <div class="relative p-4 w-full max-w-md max-h-full">
+        <div class="relative bg-white rounded-lg shadow">
+          <div class="flex items-center justify-between p-4 border-b rounded-t">
+            <h3 class="text-lg font-semibold text-gray-900">Loan Calculator</h3>
+            <button
+              type="button"
+              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+              data-modal-hide="loanModal"
+            >
+              ✕
+            </button>
+          </div>
+          <div class="p-6 space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-1"
+                >Loan Amount ($)</label
+              >
+              <input
+                id="amount"
+                type="number"
+                class="border border-gray-300 rounded-lg w-full p-2.5"
+                placeholder="Enter amount"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1"
+                >Interest Rate (%)</label
+              >
+              <input
+                id="rate"
+                type="number"
+                class="border border-gray-300 rounded-lg w-full p-2.5"
+                placeholder="7.5"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1">Months</label>
+              <input
+                id="months"
+                type="number"
+                class="border border-gray-300 rounded-lg w-full p-2.5"
+                placeholder="12"
+              />
+            </div>
+            <button
+              onclick="calculateLoan()"
+              class="w-full bg-gradient-to-r from-indigo-600 to-red-500 text-white font-semibold py-2 rounded-lg hover:opacity-90 transition"
+            >
+              Calculate
+            </button>
+            <p
+              id="result"
+              class="text-center text-indigo-700 font-medium mt-2"
+            ></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      function calculateLoan() {
+        const amount = parseFloat(document.getElementById("amount").value);
+        const rate =
+          parseFloat(document.getElementById("rate").value) / 100 / 12;
+        const months = parseFloat(document.getElementById("months").value);
+
+        if (!amount || !rate || !months) {
+          document.getElementById("result").innerText =
+            "Please fill all fields correctly.";
+          return;
+        }
+
+        const monthly = (amount * rate) / (1 - Math.pow(1 + rate, -months));
+        document.getElementById(
+          "result"
+        ).innerText = `Your monthly payment is $${monthly.toFixed(2)}`;
+      }
+    </script>
   </body>
 </html>

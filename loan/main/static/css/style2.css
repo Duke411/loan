@@ -1,9 +1,21 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
 .carousel {
   margin: 7px auto;
   width: 90%;
   border: none;
   display: flex;
-  overflow-x: auto;
+  overflow: hidden;
+  position: relative;
 }
 
 .carousel::-webkit-scrollbar {
@@ -32,10 +44,10 @@
 
 @keyframes rot {
   from {
-    translate: 0;
+    transform: translateX(0);
   }
   to {
-    translate: -100%;
+    transform: translateX(-100%);
   }
 }
 
